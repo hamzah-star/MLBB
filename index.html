@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLBB Blog</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #020617;
+      color: #e2e8f0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #2563eb, #06b6d4);
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    nav {
+      background: #020617;
+      padding: 10px;
+      text-align: center;
+      border-bottom: 2px solid #06b6d4;
+    }
+
+    nav a {
+      color: #38bdf8;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #22c55e;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .post {
+      background: #020617;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #06b6d4;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(6,182,212,0.3);
+    }
+
+    .post h2 {
+      color: #38bdf8;
+    }
+
+    .post small {
+      color: #94a3b8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #020617;
+      margin-top: 20px;
+      color: #64748b;
+      border-top: 1px solid #06b6d4;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🔥 MLBB Zone</h1>
+  <p>Guide Hero • Build • Tips Rank</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="alucard.html">Alucard</a>
+    <a href="#">Build</a>
+    <a href="#">Tips</a>
+  </nav>
+
+<div class="container">
+
+    <div class="post">
+        <h2>🧙 Daftar Hero MLBB</h2>
+        <ul id="heroList"></ul>
+      </div>
+      
+      <div class="post" id="heroDetail">
+        <h2>📖 Detail Hero</h2>
+        <p>Klik hero untuk melihat detail</p>
+      </div>
+      
+      <script>
+        const heroes = [
+          {
+            name: "Alucard",
+            role: "Fighter",
+            desc: "Hero lifesteal tinggi, cocok untuk late game.",
+            build: "War Axe, Endless Battle, Blade of Despair"
+          },
+          {
+            name: "Ling",
+            role: "Assassin",
+            desc: "Hero lincah, bisa lompat tembok.",
+            build: "Berserker Fury, Endless Battle"
+          },
+          {
+            name: "Gusion",
+            role: "Assassin",
+            desc: "Burst damage tinggi, combo cepat.",
+            build: "Calamity Reaper, Holy Crystal"
+          },
+          {
+            name: "Miya",
+            role: "Marksman",
+            desc: "Damage jauh, cocok late game",
+            build: "Swift Boots, Scarlet Phantom"
+}        ];
+      
+        const list = document.getElementById("heroList");
+        const detail = document.getElementById("heroDetail");
+      
+        heroes.forEach(hero => {
+          const li = document.createElement("li");
+          li.innerHTML = `<a href="#">${hero.name}</a>`;
+      
+          li.onclick = () => {
+            detail.innerHTML = `
+              <h2>⚔️ ${hero.name}</h2>
+              <p><b>Role:</b> ${hero.role}</p>
+              <p>${hero.desc}</p>
+              <p><b>Build:</b> ${hero.build}</p>
+            `;
+          };
+      
+          list.appendChild(li);
+        });
+      </script>
+
+</div>
+
+<footer>
+  <p>© 2026 MLBB Zone</p>
+</footer>
+
+</body>
+</html>
